@@ -108,11 +108,13 @@ RCT_EXPORT_METHOD(setLocationTimeout : (int)value) {
 
 - (void)amapLocationManager:(AMapLocationManager *)manager
            didFailWithError:(NSError *)error {
-  [self sendEventWithName:@"AMapGeolocation"
+  if (error != nil) {
+    [self sendEventWithName:@"AMapGeolocation"
                      body:@{
                        @"errorCode" : @(error.code),
                        @"errorInfo" : error.localizedDescription,
                      }];
+  }
 }
 
 - (void)amapLocationManager:(AMapLocationManager *)manager
