@@ -16,12 +16,12 @@
   "license": "MIT",
   "files": [
     "react-native.config.js",
-    "src",
+    "lib/js",
     "lib/ios",
     "lib/android/src",
     "lib/android/build.gradle"
   ],
-  "main": "src",
+  "main": "lib/js",
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
